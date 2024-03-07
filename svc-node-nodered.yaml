@@ -3,10 +3,40 @@ kind: Service
 metadata:
   annotations:
     field.cattle.io/publicEndpoints: >-
-      [{"port":30804,"protocol":"TCP","serviceName":"telem:nodered-nodeport","allNodes":true}]
+      [{"port":30690,"protocol":"TCP","serviceName":"telem:nodered-nodeport","allNodes":true}]
     field.cattle.io/targetWorkloadIds: '["telem/nodered"]'
     management.cattle.io/ui-managed: 'true'
-  creationTimestamp: '2024-03-07T12:58:44Z'  
+  creationTimestamp: '2024-03-07T13:43:01Z'
+  managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:field.cattle.io/publicEndpoints: {}
+            f:field.cattle.io/targetWorkloadIds: {}
+            f:management.cattle.io/ui-managed: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"c80a4910-9f9e-4cfc-afaa-b26dd4619847"}: {}
+        f:spec:
+          f:externalTrafficPolicy: {}
+          f:internalTrafficPolicy: {}
+          f:ports:
+            .: {}
+            k:{"port":1880,"protocol":"TCP"}:
+              .: {}
+              f:name: {}
+              f:port: {}
+              f:protocol: {}
+              f:targetPort: {}
+          f:selector: {}
+          f:sessionAffinity: {}
+          f:type: {}
+      manager: agent
+      operation: Update
+      time: '2024-03-07T13:43:01Z'
   name: nodered-nodeport
   namespace: telem
   ownerReferences:
@@ -14,13 +44,13 @@ metadata:
       controller: true
       kind: Deployment
       name: nodered
-      uid: b9982544-6986-4cb9-a3e5-eb7642f159ba
-  resourceVersion: '39020144'
-  uid: 4c2e7ec7-4734-42d5-bb38-595a9ada8122
+      uid: c80a4910-9f9e-4cfc-afaa-b26dd4619847
+  resourceVersion: '39035235'
+  uid: 66ef2a8e-380f-4778-8a2b-426c3555831f
 spec:
-  clusterIP: 10.43.53.140
+  clusterIP: 10.43.131.31
   clusterIPs:
-    - 10.43.53.140
+    - 10.43.131.31
   externalTrafficPolicy: Cluster
   internalTrafficPolicy: Cluster
   ipFamilies:
@@ -28,7 +58,7 @@ spec:
   ipFamilyPolicy: SingleStack
   ports:
     - name: 1880tcp
-      nodePort: 30804
+      nodePort: 30690
       port: 1880
       protocol: TCP
       targetPort: 1880
@@ -36,3 +66,5 @@ spec:
     workload.user.cattle.io/workloadselector: apps.deployment-telem-nodered
   sessionAffinity: None
   type: NodePort
+status:
+  loadBalancer: {}
