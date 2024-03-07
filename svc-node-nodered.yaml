@@ -6,7 +6,6 @@ metadata:
       [{"port":30690,"protocol":"TCP","serviceName":"telem:nodered-nodeport","allNodes":true}]
     field.cattle.io/targetWorkloadIds: '["telem/nodered"]'
     management.cattle.io/ui-managed: 'true'
-  creationTimestamp: '2024-03-07T13:43:01Z'
   name: nodered-nodeport
   namespace: telem
   ownerReferences:
