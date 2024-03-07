@@ -148,22 +148,4 @@ spec:
       schedulerName: default-scheduler
       securityContext: {}
       terminationGracePeriodSeconds: 30
-status:
-  availableReplicas: 1
-  conditions:
-    - lastTransitionTime: '2024-03-07T13:43:03Z'
-      lastUpdateTime: '2024-03-07T13:43:03Z'
-      message: Deployment has minimum availability.
-      reason: MinimumReplicasAvailable
-      status: 'True'
-      type: Available
-    - lastTransitionTime: '2024-03-07T13:43:00Z'
-      lastUpdateTime: '2024-03-07T13:43:03Z'
-      message: ReplicaSet "nodered-54b5d597bd" has successfully progressed.
-      reason: NewReplicaSetAvailable
-      status: 'True'
-      type: Progressing
-  observedGeneration: 2
-  readyReplicas: 1
-  replicas: 1
-  updatedReplicas: 1
+
