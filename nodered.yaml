@@ -10,7 +10,6 @@ metadata:
   labels:
     workload.user.cattle.io/workloadselector: apps.deployment-default-nodered
   name: nodered
-  namespace: telem
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
