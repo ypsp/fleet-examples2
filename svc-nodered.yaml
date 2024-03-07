@@ -1,6 +1,38 @@
 apiVersion: v1
 kind: Service
 metadata:
+  annotations:
+    field.cattle.io/targetWorkloadIds: '["telem/nodered"]'
+    management.cattle.io/ui-managed: 'true'
+  creationTimestamp: '2024-03-07T13:43:01Z'
+  managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:field.cattle.io/targetWorkloadIds: {}
+            f:management.cattle.io/ui-managed: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"c80a4910-9f9e-4cfc-afaa-b26dd4619847"}: {}
+        f:spec:
+          f:internalTrafficPolicy: {}
+          f:ports:
+            .: {}
+            k:{"port":1880,"protocol":"TCP"}:
+              .: {}
+              f:name: {}
+              f:port: {}
+              f:protocol: {}
+              f:targetPort: {}
+          f:selector: {}
+          f:sessionAffinity: {}
+          f:type: {}
+      manager: agent
+      operation: Update
+      time: '2024-03-07T13:43:01Z'
   name: nodered
   namespace: telem
   ownerReferences:
@@ -8,13 +40,13 @@ metadata:
       controller: true
       kind: Deployment
       name: nodered
-      uid: b9982544-6986-4cb9-a3e5-eb7642f159ba
-  resourceVersion: '39020135'
-  uid: ea183cac-4ddc-484e-b5f1-8d436b50184b
+      uid: c80a4910-9f9e-4cfc-afaa-b26dd4619847
+  resourceVersion: '39035227'
+  uid: 5a2a2f37-63bc-4132-a4e7-7f4f40416728
 spec:
-  clusterIP: 10.43.50.79
+  clusterIP: 10.43.195.27
   clusterIPs:
-    - 10.43.50.79
+    - 10.43.195.27
   internalTrafficPolicy: Cluster
   ipFamilies:
     - IPv4
@@ -28,3 +60,5 @@ spec:
     workload.user.cattle.io/workloadselector: apps.deployment-telem-nodered
   sessionAffinity: None
   type: ClusterIP
+status:
+  loadBalancer: {}
