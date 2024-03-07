@@ -6,7 +6,6 @@ metadata:
     field.cattle.io/publicEndpoints: >-
       [{"port":30690,"protocol":"TCP","serviceName":"telem:nodered-nodeport","allNodes":true}]
   creationTimestamp: '2024-03-07T13:43:00Z'
-  generation: 2
   labels:
     workload.user.cattle.io/workloadselector: apps.deployment-telem-nodered
   name: nodered
