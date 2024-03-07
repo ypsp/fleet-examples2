@@ -5,8 +5,6 @@ metadata:
     deployment.kubernetes.io/revision: '1'
     field.cattle.io/publicEndpoints: >-
       [{"port":31835,"protocol":"TCP","serviceName":"default:nodered-nodeport","allNodes":true}]
-  creationTimestamp: '2024-02-26T11:31:54Z'
-  generation: 3
   labels:
     workload.user.cattle.io/workloadselector: apps.deployment-default-nodered
   name: nodered
