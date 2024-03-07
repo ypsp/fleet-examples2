@@ -1,10 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  annotations:
-    deployment.kubernetes.io/revision: '1'
-    field.cattle.io/publicEndpoints: >-
-      [{"port":31835,"protocol":"TCP","serviceName":"default:nodered-nodeport","allNodes":true}]
   labels:
     workload.user.cattle.io/workloadselector: apps.deployment-default-nodered
   name: nodered
