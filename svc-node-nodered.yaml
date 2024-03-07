@@ -7,36 +7,6 @@ metadata:
     field.cattle.io/targetWorkloadIds: '["telem/nodered"]'
     management.cattle.io/ui-managed: 'true'
   creationTimestamp: '2024-03-07T13:43:01Z'
-  managedFields:
-    - apiVersion: v1
-      fieldsType: FieldsV1
-      fieldsV1:
-        f:metadata:
-          f:annotations:
-            .: {}
-            f:field.cattle.io/publicEndpoints: {}
-            f:field.cattle.io/targetWorkloadIds: {}
-            f:management.cattle.io/ui-managed: {}
-          f:ownerReferences:
-            .: {}
-            k:{"uid":"c80a4910-9f9e-4cfc-afaa-b26dd4619847"}: {}
-        f:spec:
-          f:externalTrafficPolicy: {}
-          f:internalTrafficPolicy: {}
-          f:ports:
-            .: {}
-            k:{"port":1880,"protocol":"TCP"}:
-              .: {}
-              f:name: {}
-              f:port: {}
-              f:protocol: {}
-              f:targetPort: {}
-          f:selector: {}
-          f:sessionAffinity: {}
-          f:type: {}
-      manager: agent
-      operation: Update
-      time: '2024-03-07T13:43:01Z'
   name: nodered-nodeport
   namespace: telem
   ownerReferences:
