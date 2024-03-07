@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ubuntu
+  labels:
+    workload.user.cattle.io/workloadselector: apps.deployment-default-ubuntu
+spec:
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: apps.deployment-default-ubuntu
+  template:
+    metadata:
+      labels:
+        workload.user.cattle.io/workloadselector: apps.deployment-default-ubuntu
+    spec:
+      containers:
+        - imagePullPolicy: Always
+          name: container-0
+          securityContext:
+            runAsNonRoot: false
+            readOnlyRootFilesystem: false
+            privileged: false
+            allowPrivilegeEscalation: false
+          image: ubuntu
+          stdin: false
+          stdinOnce: false
+          command:
+            - sleep
+            - infinity
+          tty: false
+      restartPolicy: Always
+  replicas: 1
