@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodered
+  namespace: telem
+  ownerReferences:
+    - apiVersion: apps/v1
+      controller: true
+      kind: Deployment
+      name: nodered
+      uid: b9982544-6986-4cb9-a3e5-eb7642f159ba
+  resourceVersion: '39020135'
+  uid: ea183cac-4ddc-484e-b5f1-8d436b50184b
+spec:
+  clusterIP: 10.43.50.79
+  clusterIPs:
+    - 10.43.50.79
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+    - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+    - name: 1880tcp
+      port: 1880
+      protocol: TCP
+      targetPort: 1880
+  selector:
+    workload.user.cattle.io/workloadselector: apps.deployment-telem-nodered
+  sessionAffinity: None
+  type: ClusterIP
