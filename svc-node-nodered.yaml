@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    field.cattle.io/publicEndpoints: >-
+      [{"port":30804,"protocol":"TCP","serviceName":"telem:nodered-nodeport","allNodes":true}]
+    field.cattle.io/targetWorkloadIds: '["telem/nodered"]'
+    management.cattle.io/ui-managed: 'true'
+  creationTimestamp: '2024-03-07T12:58:44Z'  
+  name: nodered-nodeport
+  namespace: telem
+  ownerReferences:
+    - apiVersion: apps/v1
+      controller: true
+      kind: Deployment
+      name: nodered
+      uid: b9982544-6986-4cb9-a3e5-eb7642f159ba
+  resourceVersion: '39020144'
+  uid: 4c2e7ec7-4734-42d5-bb38-595a9ada8122
+spec:
+  clusterIP: 10.43.53.140
+  clusterIPs:
+    - 10.43.53.140
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+    - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+    - name: 1880tcp
+      nodePort: 30804
+      port: 1880
+      protocol: TCP
+      targetPort: 1880
+  selector:
+    workload.user.cattle.io/workloadselector: apps.deployment-telem-nodered
+  sessionAffinity: None
+  type: NodePort
