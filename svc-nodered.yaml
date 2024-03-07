@@ -3,12 +3,6 @@ kind: Service
 metadata:
   name: nodered
   namespace: telem
-  ownerReferences:
-    - apiVersion: apps/v1
-      controller: true
-      kind: Deployment
-      name: nodered
-      uid: c80a4910-9f9e-4cfc-afaa-b26dd4619847
 spec:
   clusterIP: 10.43.195.27
   clusterIPs:
