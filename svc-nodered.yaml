@@ -41,8 +41,6 @@ metadata:
       kind: Deployment
       name: nodered
       uid: c80a4910-9f9e-4cfc-afaa-b26dd4619847
-  resourceVersion: '39035227'
-  uid: 5a2a2f37-63bc-4132-a4e7-7f4f40416728
 spec:
   clusterIP: 10.43.195.27
   clusterIPs:
